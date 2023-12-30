@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Account Recovery</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #2825d7;
+            transition: background-color 0.3s ease;
+            color: #fff;
+        }
+
+        button:hover {
+            background-color: #3a79cb;
+        }
+
+        span {
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        input {
+            height: 45px;
+            width: 400px;
+            margin: 10px auto;
+            border-radius: 8px;
+            border: 1px solid #dadce0;
+            padding: 0 15px;
+            box-sizing: border-box;
+            display: block;
+            font-size: 16px;
+            border: 2px solid #005eff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0400ff;
+        }
+
+        .passwordRec {
+            display: none;
+        }
+
+        .emailRec {
+            display: none;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .error {
+            display: none;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .er {
+            display: none;
+            color: rgb(192, 22, 22);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://webstockreview.net/images/new-google-logo-png-1.png" alt="logo">
+    </header>
+    <main>
+        <h1>Did you forget your</h1>
+        <button onclick="email()">Email</button>
+        <span>or</span>
+        <button onclick="password()">Password</button>
+    </main>
+    <section class="emailRec">
+        <h2>Email Recovery</h2>
+        <label>
+            Phone Number:
+            <input type="" placeholder="123-456-7890">
+        </label>
+        <p>If you do not have a valid phone number, please contact us <a href="	http://gg.gg/188o09">here</a></p>
+        <button onclick="check()" class="check">Next</button>
+    </section>
+    <section class="passwordRec">
+        <h2>Password Recovery</h2>
+        <label>
+            Email or Phone Number:
+            <input type="text">
+        </label>
+        <p>If you need further help, please contact us <a href="http://gg.gg/188o09">here</a></p>
+        <button onclick="check()" class="check">Next</button>
+    </section>
+    <section class="error">
+        <h2>Check you Email or Phone Number </h2>
+        <h2 style="text-indent: 100px;">a Verification code.</h2>
+        <label>
+            Enter Verification Code:
+            <input type="text" placeholder="G-12345">
+        </label>
+        <p class="er">Please Enter A Valid Code</p>
+        <p>Didn't get a code? Try<span id="resend" style="color: #0400ff;">Resending It</span></p>
+        <button onclick="err()">Next</button>
+    </section>
+    <section class="none">
+        <h2>Code Resent</h2>
+        <label>
+            Enter The New Verification Code:
+            <input type="text" placeholder="G-12345">
+        </label>
+        <p class="er">Please Enter A Valid Code</p>
+        <p>If you need still didn't get a code, try contacting us<a href="http://gg.gg/188o09">here</a></p>
+        <button onclick="err()">Next</button>
+    </section>
+    <script>
+        function password() {
+            const ask = document.querySelector("main");
+            const password = document.querySelector(".passwordRec");
+            ask.style.display = "none";
+            password.style.display = "block";
+        }
+
+        function email() {
+            const ask = document.querySelector("main");
+            const email = document.querySelector(".emailRec");
+            ask.style.display = "none";
+            email.style.display = "block";
+        }
+
+        function check() {
+            const password = document.querySelector(".passwordRec");
+            const email = document.querySelector(".emailRec");
+            const ver = document.querySelector(".error");
+
+            password.style.display = "none";
+            email.style.display = "none";
+            ver.style.display = "block"
+        }
+
+        const re = document.getElementById("resend");
+
+        re.addEventListener("click", function() {
+            const ver = document.querySelector(".error");
+            const none = document.querySelector(".none");
+            const er = document.querySelector(".er");
+
+            ver.style.display = "none";
+            none.style.display = "block";
+            er.style.display = "none";
+        })
+
+        function err() {
+            const er = document.querySelector(".er");
+
+            er.style.display = "block";
+        }
+    </script>
+</body>
+</html>
