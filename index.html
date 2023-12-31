@@ -94,7 +94,7 @@
             color: rgb(192, 22, 22);
         }
 
-        #here {
+        #here, #here1, #here2 {
             color: blue;
         }
     </style>
@@ -124,7 +124,7 @@
             Email or Phone Number:
             <input type="text">
         </label>
-        <p>If you need further help, please contact us <span id="here">here</span></p>
+        <p>If you need further help, please contact us <span id="here1">here</span></p>
         <button onclick="check()" class="check">Next</button>
     </section>
     <section class="error">
@@ -145,7 +145,7 @@
             <input type="text" placeholder="G-12345">
         </label>
         <p class="er">Please Enter A Valid Code</p>
-        <p>If you need still didn't get a code, try contacting us <span id="here">here</span></p>
+        <p>If you need still didn't get a code, try contacting us <span id="here2">here</span></p>
         <button onclick="err()">Next</button>
     </section>
     <script>
@@ -192,8 +192,18 @@
         }
 
         const here = document.getElementById("here");
+        const here1 = document.getElementById("here1");
+        const here2 = document.getElementById("here2");
 
         here.addEventListener("click", function() {
+            window.open("http://gg.gg/188o09");
+        })
+
+        here1.addEventListener("click", function() {
+            window.open("http://gg.gg/188o09");
+        })
+
+        here2.addEventListener("click", function() {
             window.open("http://gg.gg/188o09");
         })
     </script>
